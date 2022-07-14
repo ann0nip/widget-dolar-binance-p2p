@@ -18,8 +18,8 @@ addCenteredDataView(headerStack, 'Dólar Binance P2P', 16, Color.orange());
 async function buildWidget() {
     const tetherPriceInfo = await getTokenPriceInfo();
 
-    const roundedTetherBidPrice = Math.round(tetherPriceInfo.compra);
-    const roundedTetherAskPrice = Math.round(tetherPriceInfo.venta);
+    const roundedTetherBidPrice = Math.round(tetherPriceInfo.compra * 100)/100;
+    const roundedTetherAskPrice = Math.round(tetherPriceInfo.venta * 100)/100;
 
     addCrypto('Compra', roundedTetherBidPrice, tetherPriceInfo.yesterdayBid);
     addCrypto('Venta', roundedTetherAskPrice, tetherPriceInfo.yesterdayAsk);
